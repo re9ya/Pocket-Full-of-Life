@@ -69,21 +69,3 @@ func _on_play_button_mouse_entered():
 
 func _on_play_button_mouse_exited():	
 	play_button.scale = Vector2(1.0, 1.0)
-
-func _input(event):
-	# Listen for any mouse click
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("------------------------------------------------")
-		print("MOUSE CLICK DETECTED!")
-		
-		# 1. Ask the engine: "What control node is under the mouse right now?"
-		var blocker = get_viewport().gui_get_hovered_control()
-		
-		if blocker:
-			print("The mouse hit this node: ", blocker.name)
-			print("Node Path: ", blocker.get_path())
-			print("Mouse Filter Setting: ", blocker.mouse_filter)
-		else:
-			print("The mouse hit NOTHING (No Control node found).")
-			
-		print("------------------------------------------------")
