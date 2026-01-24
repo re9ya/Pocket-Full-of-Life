@@ -9,7 +9,7 @@ func fade_to_black():
 	var tween = create_tween()
 	
 	#fading out slowly
-	tween.tween_property(color_rect, "modulate: a", 1.0, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(color_rect, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	
 	#Notifies when tween is finished
 	await tween.finished
@@ -17,7 +17,7 @@ func fade_to_black():
 
 func fade_to_clear():
 	var tween = create_tween()
-	tween.tween_property(color_rect, "modulate: a", 0.0, 0.5)
+	tween.tween_property(color_rect, "modulate:a", 0.0, 0.5)
 	await tween.finished
 	emit_signal("fade_completed")
 

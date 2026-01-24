@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqvr0amj22apf"]
+
+[ext_resource type="Script" uid="uid://b3rgiowgpab1f" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://dgs4ohlt7git7" path="res://Art/Schoolbell-Regular.ttf" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://i1vll5uriury" path="res://Art/Sufficating-Opening.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cs5jt3j7s2vtc" path="res://Art/Title.png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://dyo1erqngde4s" path="res://Art/Play Button.png" id="5_glbon"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="GameBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jix8l")
+
+[node name="BlackOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Quote" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -39.0
+offset_right = 188.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+theme_override_fonts/font = ExtResource("2_fu7sn")
+text = "\"'Whenever you feel like criticizing any one...
+just remember
+ that all the people in this world 
+haven’t had the advantages that you’ve had'\""
+horizontal_alignment = 1
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.99997
+offset_top = -360.0
+offset_right = 479.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.65)
+mouse_filter = 2
+texture = ExtResource("4_glbon")
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 314.0
+offset_top = 260.0
+offset_right = 414.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+pivot_offset = Vector2(100, 50)
+texture_normal = ExtResource("5_glbon")
+texture_pressed = ExtResource("5_glbon")
+texture_hover = ExtResource("5_glbon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="button_down" from="PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_up" from="PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="mouse_entered" from="PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="PlayButton" to="." method="_on_play_button_mouse_exited"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

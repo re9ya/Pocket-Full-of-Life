@@ -16,6 +16,11 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 [autoload]
 
 SceneTransition="*res://scene_transition.tscn"
+DialogueManager="*res://dialogue_manager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [rendering]
 
